@@ -1,0 +1,46 @@
+CREATE USER 'king'@'%' IDENTIFIED VIA mysql_native_password USING '***';GRANT ALL PRIVILEGES ON *.* TO 'king'@'%' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;CREATE DATABASE IF NOT EXISTS `king`;GRANT ALL PRIVILEGES ON `king`.* TO 'king'@'%';GRANT ALL PRIVILEGES ON `king\_%`.* TO 'king'@'%';
+
+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
+
+https://github.com/dopswae98/test.git
+
+
+kingpingx88@gmail.com
+nodemailer
+vgafytqhfzpngojl
+
+<Map
+          height={500}
+          width={"100%"}
+          defaultCenter={[50.879, 4.6997]}
+          defaultZoom={1}
+        >
+          <Marker
+            //   key={indexs}
+
+            width={20}
+            color="pink"
+            anchor={[-35.879, 40.6997]}
+            //   anchor={[loc.trace.latitude, loc.trace.longitude]}
+          />
+          <Marker
+            //   key={indexs}
+
+            width={20}
+            anchor={[-15.879, 40.6997]}
+            //   anchor={[loc.trace.latitude, loc.trace.longitude]}
+          />
+          {SData.map((item) => {
+            return item.path.map((loc, index) => {
+              return (
+                <Marker
+                  key={index}
+                  color="green"
+                  width={20}
+                  anchor={[loc.trace.latitude, loc.trace.longitude]}
+                  onClick={(loc) => handleClick(loc)}
+                />
+              );
+            });
+          })}
+        </Map>
